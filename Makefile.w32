@@ -1,0 +1,15 @@
+.SUFFIXES: .cxx .o
+
+all : test.exe
+
+test.exe : tinyxmlrpc.o test.o
+	g++ -g -o $@ tinyxmlrpc.o test.o `pkg-config --libs libxml-2.0` -lcurldll -lws2_32
+
+rssping.exe : tinyxmlrpc.o rssping.o
+	g++ -g -o $@ tinyxmlrpc.o rssping.o `pkg-config --libs libxml-2.0` -lcurldll -lws2_32
+
+.cxx.o :
+	g++ -g `pkg-config --cflags libxml-2.0` -c $<
+
+clean :
+	rm -f *.o *.exe
