@@ -28,6 +28,7 @@
 #include <string>
 #include <ostream>
 #include <algorithm>
+#include <stdio.h>
 
 namespace tinyxmlrpc {
 

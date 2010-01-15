@@ -20,11 +20,6 @@ public:
 };
 
 int main(int argc, char* argv[]) {
-#ifdef _WIN32
-	WSAData wsadata;
-	WSAStartup(MAKEWORD(2,0), &wsadata);
-#endif
-
 	if (argc != 4) return -1;
 
 	std::string endpoint = argv[1];

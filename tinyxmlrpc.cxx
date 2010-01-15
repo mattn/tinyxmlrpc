@@ -730,7 +730,7 @@ std::string extract_failt_message(std::string& strXml) {
 }
 
 value::Binary binary_fromfile(std::string filename) {
-#ifdef _WIN32
+#ifdef _MSC_VER
 	struct _stat statbuf = {0};
 #else
 	struct stat statbuf = {0};
